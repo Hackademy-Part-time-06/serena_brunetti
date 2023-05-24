@@ -3,7 +3,7 @@
 
     <h1>{{ $dettagli['city'] }}</h1>
 
-    <x-card />
+    <x-card :dettagli="$dettagli" :posti="$posti" />
 
     <x-footer />
 </x-main>

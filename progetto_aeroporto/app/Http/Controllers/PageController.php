@@ -94,14 +94,14 @@ class PageController extends Controller
                     $posti = $flight['seats']['total'] - $flight['seats']['occupied'];
                     $posti = "Posti disponibili = $posti";
                 }
-                return view('components.card', ['dettagli' => $flight, 'posti' => $posti]);
+                return view('detail', ['dettagli' => $flight, 'posti' => $posti]);
             }
         }
 
         foreach (self::$flights['arrival'] as $flight) {
             if ($flight['id'] == $id) {
                 $posti = "Aereo in arrivo";
-                return view('components.card', ['dettagli' => $flight, 'posti' => $posti]);
+                return view('detail', ['dettagli' => $flight, 'posti' => $posti]);
             }
         }
         abort(404);
