@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [BookController::class, 'index'])->name('index');
+//Route::get('/index', [BookController::class, 'index'])->name('index');
 
 /* Route::get('/contatti', [PageController::class, 'contatti'])->name('contatti'); */
+
+Route::get('/libri', [BookController::class, 'index'])->name('books.index');
+Route::get('/libri/crea', [BookController::class, 'create'])->name('books.create');
+Route::post('/libri/salva', [BookController::class, 'store'])->name('books.store');
+Route::get('/libri/{book}/dettagli', [BookController::class, 'show'])->name('books.show');
