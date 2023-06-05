@@ -8,7 +8,7 @@
             </ul>
         </div>
     @endif
-    <form class="w-50 m-auto" action="{{ route('books.store') }}" method="POST">
+    <form class="w-50 m-auto" action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
         @csrf
 
@@ -28,6 +28,10 @@
         <div class="mb-3">
             <label class="form-label">Anno</label>
             <input type="number" class="form-control" name="year" value="{{ old('year') }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Carica la copertina</label>
+            <input type="file" class="form-control" name="image" value="{{ old('image') }}">
         </div>
         {{--  class="form-control" id="name" type="text" placeholder="Name"
         name="name" value="{{ old('name') }} --}}
